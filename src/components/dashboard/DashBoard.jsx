@@ -4,6 +4,13 @@ import SideBar from "../sideBar/SideBar";
 import "./dashboard.css";
 import {
   AreaChart,
+  PieChart,
+  Pie,
+  Sector,
+  BarChart,
+  Bar,
+  Rectangle,
+  Legend,
   Area,
   XAxis,
   YAxis,
@@ -11,7 +18,6 @@ import {
   Tooltip,
   ResponsiveContainer,
 } from "recharts";
-import { PieChart, Pie, Sector } from "recharts";
 
 const areaData = [
   {
@@ -135,6 +141,99 @@ const renderActiveShape = (props) => {
       >
         {`(Rate ${(percent * 100).toFixed(2)}%)`}
       </text>
+    </g>
+  );
+};
+
+const barData = [
+  {
+    name: "3 June",
+    uv: 4000,
+    workers: 100,
+    amt: 2400,
+  },
+  {
+    name: "4 June",
+    uv: 3000,
+    workers: 120,
+    amt: 2210,
+  },
+  {
+    name: "5 June",
+    uv: 2000,
+    workers: 120,
+    amt: 2290,
+  },
+  {
+    name: "6 June",
+    uv: 2780,
+    workers: 225,
+    amt: 2000,
+  },
+  {
+    name: "7 June",
+    uv: 1890,
+    workers: 250,
+    amt: 2181,
+  },
+  {
+    name: "8 June",
+    uv: 2390,
+    workers: 200,
+    amt: 2500,
+  },
+  {
+    name: "9 June",
+    uv: 3490,
+    workers: 225,
+    amt: 2100,
+  },
+  {
+    name: "10 June",
+    uv: 3490,
+    workers: 100,
+    amt: 2100,
+  },
+  {
+    name: "11 June",
+    uv: 3490,
+    workers: 250,
+    amt: 2100,
+  },
+  {
+    name: "12 June",
+    uv: 3490,
+    workers: 310,
+    amt: 2100,
+  },
+  {
+    name: "13 June",
+    uv: 3490,
+    workers: 350,
+    amt: 2100,
+  },
+  {
+    name: "14 June",
+    uv: 3490,
+    workers: 400,
+    amt: 2100,
+  },
+];
+
+const roundBar = (props) => {
+  const { x, y, width, height } = props;
+
+  return (
+    <g>
+      <rect
+        x={x}
+        y={y}
+        width={width}
+        height={height}
+        rx={10}
+        ry={10}
+        fill="#0D62FFCC"
+      />
     </g>
   );
 };
@@ -522,7 +621,44 @@ const DashBoard = () => {
                   </div>
                 </div>
               </div>
-              <div className="barGraph">Bar graph</div>
+              <div className="barGraph">
+                <div className="barHeading">
+                  <span>Last 14 Days Active Workers in Training</span>
+                  <span>Last 14 Days</span>
+                </div>
+                <div className="bar">
+                  <ResponsiveContainer width="100%" height="100%">
+                    <BarChart
+                      width={500}
+                      height={300}
+                      data={barData}
+                      margin={{
+                        top: 5,
+                        right: 30,
+                        left: 20,
+                        bottom: 5,
+                      }}
+                      barSize={20}
+                    >
+                      <XAxis
+                        dataKey="name"
+                        scale="point"
+                        padding={{ left: 10, right: 10 }}
+                      />
+                      <YAxis />
+                      <Tooltip />
+                      <Legend />
+                      <CartesianGrid strokeDasharray="3 3" />
+                      <Bar
+                        dataKey="workers"
+                        shape={roundBar}
+                        fill="#0D62FFCC"
+                        background={{ fill: "#E7EFFF", radius: 10}}
+                      />
+                    </BarChart>
+                  </ResponsiveContainer>
+                </div>
+              </div>
             </div>
           </div>
         </div>
