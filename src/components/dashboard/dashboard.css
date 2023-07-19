@@ -1,0 +1,130 @@
+.container {
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+}
+
+.sidebar {
+  border: 2px solid red;
+  flex: 0.75;
+}
+
+.dashboard {
+  border: 2px solid rgb(5, 143, 35);
+  flex: 3.25;
+}
+
+.dashboard-header {
+  background-image: linear-gradient(90deg, #043d96, #0c58e6, #80a9ff);
+  color: white;
+  /* font-family: "Poppins"; */
+  font-style: normal;
+  text-transform: capitalize;
+  text-align: left;
+  padding: 20px;
+}
+
+.dashboard-content {
+  background-color: #e7efff;
+  height: 100vh;
+  padding: 20px;
+}
+
+.mgraphs {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  gap: 24px;
+  text-align: start;
+}
+
+.mgraph1,
+.mgraph2,
+.mgraph3,
+.mgraph4 {
+  height: 140px;
+  flex: 1;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0px 4px 4px 0px #1878f240;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.mgraph1-heading,
+.mgraph2-heading,
+.mgraph3-heading,
+.mgraph4-heading {
+  flex: 1;
+}
+
+.mgraph1-content,
+.mgraph2-content,
+.mgraph3-content,
+.mgraph4-content {
+  flex: 2;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.mgraph1-numbers,
+.mgraph2-numbers,
+.mgraph3-numbers,
+.mgraph4-numbers {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.bar-chart {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.pieChart,
+.barGraph {
+  height: fit-content;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0px 4px 4px 0px #1878f240;
+}
+
+.pieChart {
+  flex: 1.5;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: start;
+  padding: 12px;
+}
+
+.chapters {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.chapters div {
+  margin: 5px 0px;
+}
+
+.barGraph {
+  flex: 2.5;
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .sidebar,
+  .dashboard {
+    flex: 1;
+  }
+}

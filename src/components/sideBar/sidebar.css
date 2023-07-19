@@ -1,0 +1,41 @@
+.siddbarContainer {
+  height: 100vh;
+  background-color: white;
+}
+
+.logo {
+  border-bottom: 3px solid #bebebe;
+  padding: 24px;
+}
+
+.navs {
+  color: #0d62ff;
+}
+
+.navs ul {
+  list-style-type: none;
+  height: 300px;
+  width: 12rem;
+  margin: auto;
+  /* display: flex;
+  flex-direction: column;
+  justify-content: space-evenly; */
+}
+
+.navs ul li {
+  margin: 20px 0;
+  cursor: pointer;
+  padding: 8px 16px;
+  transition: background-color 0.3s ease;
+}
+
+.navs ul li:hover {
+  background-color: #f1f1f1;
+}
+
+.navs ul li.selected {
+  background-color: #0d62ff;
+  color: #fff;
+  font-weight: bold;
+  border-radius: 5px;
+}
