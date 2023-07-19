@@ -116,6 +116,21 @@
 
 .barGraph {
   flex: 2.5;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.barHeading {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 12px;
+  gap: 10px;
+}
+
+.bar {
+  height: 392px;
 }
 
 @media (max-width: 768px) {
