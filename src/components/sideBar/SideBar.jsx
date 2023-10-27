@@ -3,6 +3,7 @@ import { useState } from "react";
 import Image from "next/image";
 import Logo from "@/../public/assests/Logo.png";
 import "./sidebar.css";
+import Link from "next/link";
 
 const SideBar = () => {
   const [selectedItem, setSelectedItem] = useState("");
@@ -18,12 +19,14 @@ const SideBar = () => {
       </div>
       <div className="navs">
         <ul>
-          <li
-            onClick={() => handleItemClick("Dashboard")}
-            className={selectedItem === "Dashboard" ? "selected" : ""}
-          >
-            Dashboard
-          </li>
+          <Link href="/">
+            <li
+              onClick={() => handleItemClick("Dashboard")}
+              className={selectedItem === "Dashboard" ? "selected" : ""}
+            >
+              Dashboard
+            </li>
+          </Link>
           <li
             onClick={() => handleItemClick("Trainings")}
             className={selectedItem === "Trainings" ? "selected" : ""}
