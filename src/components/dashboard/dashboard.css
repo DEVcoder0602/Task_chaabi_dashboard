@@ -14,7 +14,6 @@
 .dashboard {
   border: 2px solid rgb(5, 143, 35);
   flex: 3.25;
-  /* overflow-x: scroll; */
 }
 
 .dashboard-header {
@@ -107,6 +106,7 @@
   justify-content: space-between;
   text-align: start;
   padding: 12px;
+  /* overflow-x: auto; */
 }
 
 .chapters {
@@ -121,6 +121,8 @@
 
 .barGraph {
   width: inherit;
+  min-width: 400px;
+  /* overflow-x: hidden; */
   flex: 2.5;
   display: flex;
   flex-direction: column;
@@ -137,6 +139,33 @@
 
 .bar {
   height: 392px;
+}
+
+@media (max-width: 1024px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .mgraph1,
+  .mgraph2,
+  .mgraph3,
+  .mgraph4 {
+    flex: content;
+  }
+
+  .sidebar {
+    display: none;
+  }
+
+  .dashboard {
+    flex: 1;
+  }
+
+  .chapters {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
 }
 
 @media (max-width: 768px) {
