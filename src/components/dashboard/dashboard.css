@@ -180,4 +180,8 @@
   .dashboard {
     flex: 1;
   }
+
+  .bar-chart {
+    overflow-x: scroll;
+  }
 }
